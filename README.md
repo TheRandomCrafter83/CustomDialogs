@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
 ## Screenshots
 **ColorDialog**
-<table>
+<table style="border:none">
   <tr>
     <td>Hue Palette</td>
      <td>RGB Sliders</td>
