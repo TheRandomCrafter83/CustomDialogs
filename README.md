@@ -84,14 +84,14 @@ public class MainActivity extends AppCompatActivity {
 
 ## Screenshots
 **ColorDialog**
-<table style="border:none">
-  <tr style="border:none">
-    <td style="border:none">Hue Palette</td>
-     <td style="border:none">RGB Sliders</td>
+<table style="border:none !important">
+  <tr style="border:none !important">
+    <td style="border:none !important">Hue Palette</td>
+     <td style="border:none !important">RGB Sliders</td>
   </tr>
-  <tr style="border:none">
-    <td valign="top" style="border:none"><img src="readme_images/colordialog_screenshot1.png"></td>
-    <td valign="top" style="border:none"><img src="readme_images/colordialog_screenshot2.png"></td>
+  <tr style="border:none !important">
+    <td valign="top" style="border:none !important"><img src="readme_images/colordialog_screenshot1.png"></td>
+    <td valign="top" style="border:none !important"><img src="readme_images/colordialog_screenshot2.png"></td>
   </tr>
  </table>
 
