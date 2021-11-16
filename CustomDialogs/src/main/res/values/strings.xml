@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Custom Dialogs Sample</string>
+    <string name="palette">Palette</string>
+    <string name="rgb">RGB</string>
+    <string name="hue_palette">Hue Palette</string>
+    <string name="opacity">Opacity</string>
+    <string name="saturation">Saturation</string>
+    <string name="brightness">Brightness</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
+    <string name="blue">Blue</string>
+    <string name="alpha">Alpha</string>
+</resources>
