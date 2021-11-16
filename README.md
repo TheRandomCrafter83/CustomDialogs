@@ -22,7 +22,7 @@ Custom Dialogs is an Android Library containing several useful custom dialogs.
 
 ## Installation
 **settings.gradle**
-```
+```gradle
 repositories {
         google()
         mavenCentral()
@@ -32,7 +32,7 @@ repositories {
 ```
 
 **build.gradle(App Module)**
-```
+```gradle
 implementation 'com.github.TheRandomCrafter83:CustomDialogs:1.0' <--add this implementation to the dependencies section
 ```
 
