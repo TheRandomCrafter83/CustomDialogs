@@ -24,7 +24,7 @@ Custom Dialogs is an Android Library containing several useful custom dialogs.
 **settings.gradle**
 ```gradle
 repositories {
-        ...
+        //...
         maven { url 'https://jitpack.io' } //<---Add this line to the file to use jitpack.io as a repository source
     }
 ```
