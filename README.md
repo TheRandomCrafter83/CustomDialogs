@@ -27,13 +27,13 @@ repositories {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
-        maven { url 'https://jitpack.io' } <---Add this line to the file to use jitpack.io as a repository source
+        maven { url 'https://jitpack.io' } //<---Add this line to the file to use jitpack.io as a repository source
     }
 ```
 
 **build.gradle(App Module)**
 ```gradle
-implementation 'com.github.TheRandomCrafter83:CustomDialogs:1.0' <--add this implementation to the dependencies section
+implementation 'com.github.TheRandomCrafter83:CustomDialogs:1.0' //<--add this implementation to the dependencies section
 ```
 
 ## Example Usage
