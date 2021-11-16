@@ -84,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
 
 ## Screenshots
 **ColorDialog**
-![screenshot1](readme_images/colordialog_screenshot1.png) ![screenshot2](readme_images/colordialog_screenshot2.png)
+Hue Palette             |  RGB sliders
+:-------------------------:|:-------------------------:
+![screenshot1](readme_images/colordialog_screenshot1.png)  |  ![screenshot2](readme_images/colordialog_screenshot2.png)
+
 ## License
 MIT
