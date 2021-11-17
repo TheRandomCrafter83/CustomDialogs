@@ -4,8 +4,8 @@
 [![Build Status](readme_images/build.svg)](https://github.com/TheRandomCrafter83/CustomDialogs)
 
 Custom Dialogs is an Android Library containing several useful custom dialogs.
- - Currently there is only one dialog type, the ColorDialog.
- - More to come later.
+- Currently there is only one dialog type, the ColorDialog.
+- More to come later.
 
 ## Features
 
@@ -17,8 +17,8 @@ Custom Dialogs is an Android Library containing several useful custom dialogs.
 
 ## Tech
 
- Custom Dialogs is an open source project which can be found [Here](https://github.com/TheRandomCrafter83/CustomDialogs)
- on GitHub.
+Custom Dialogs is an open source project which can be found [Here](https://github.com/TheRandomCrafter83/CustomDialogs)
+on GitHub.
 
 ## Installation
 **settings.gradle** - your settings.gradle file should look similar to the following.
@@ -57,35 +57,35 @@ import com.coderz.f1.customdialogs.colordialog.ColorDialog;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Button button = findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ColorDialog cd = new ColorDialog(MainActivity.this, new ColorDialog.DialogResponseListener() {
-                    @Override
-                    public void onOkClicked(int color) {
-                        button.setText(Integer.toString(color));
-                    }
+ @Override
+ protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(savedInstanceState);
+  setContentView(R.layout.activity_main);
+  Button button = findViewById(R.id.button);
+  button.setOnClickListener(new View.OnClickListener() {
+   @Override
+   public void onClick(View v) {
+    ColorDialog cd = new ColorDialog(MainActivity.this, new ColorDialog.DialogResponseListener() {
+     @Override
+     public void onOkClicked(int color) {
+      button.setText(Integer.toString(color));
+     }
 
-                    @Override
-                    public void onCancelClicked() {
+     @Override
+     public void onCancelClicked() {
 
-                    }
-                });
-                cd.setTitle("Choose a color");
-                cd.setTabIndex(ColorDialog.TabIndex.PALETTE);
-                cd.setInitialColor(Color.RED);
-                cd.setMargins(8);
-                cd.setBackgroundColor(Color.GRAY);
-                cd.setTextColor(Color.YELLOW);
-                cd.showDialog();
-            }
-        });
-    }
+     }
+    });
+    cd.setTitle("Choose a color");
+    cd.setTabIndex(ColorDialog.TabIndex.PALETTE);
+    cd.setInitialColor(Color.RED);
+    cd.setMargins(8);
+    cd.setBackgroundColor(Color.GRAY);
+    cd.setTextColor(Color.YELLOW);
+    cd.showDialog();
+   }
+  });
+ }
 }
 ```
 
