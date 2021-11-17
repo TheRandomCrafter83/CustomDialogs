@@ -21,17 +21,24 @@ Custom Dialogs is an Android Library containing several useful custom dialogs.
  on GitHub.
 
 ## Installation
-**settings.gradle**
+**settings.gradle** - your settings.gradle file should look similar to the following.
+
 ```gradle
-repositories {
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
-        maven { url 'https://jitpack.io' } //<---Add this line to the file to use jitpack.io as a repository source
+        maven { url 'https://jitpack.io' }
     }
+}
+rootProject.name = "My Application"
+include ':app'
 ```
 
-**build.gradle(App Module)**
+**build.gradle(App Module)** - then you can add the following in your module level's dependencies section.
+
 ```gradle
 implementation 'com.github.TheRandomCrafter83:CustomDialogs:1.0' //<--add this implementation to the dependencies section
 ```
