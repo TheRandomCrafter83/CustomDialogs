@@ -142,6 +142,7 @@ public class ColorDialog {
         this.context = context;
         this.listener = listener;
         //margins = (int) (32 * Resources.getSystem().getDisplayMetrics().density);
+        setInitialColor(Color.BLACK);
         TypedValue a = new TypedValue();
         context.getTheme().resolveAttribute(android.R.attr.windowBackground,a,true);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
