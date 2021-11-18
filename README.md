@@ -42,7 +42,7 @@ include ':app'
 **build.gradle(App Module)** - then you can add the following in your module level's dependencies section.
 
 ```gradle
-implementation 'com.github.TheRandomCrafter83:CustomDialogs:1.0' //<--add this implementation to the dependencies section
+implementation 'com.github.TheRandomCrafter83:CustomDialogs:1.3' //<--add this implementation to the dependencies section
 ```
 
 ## Example Usage
