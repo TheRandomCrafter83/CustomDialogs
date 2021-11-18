@@ -105,4 +105,4 @@ public class MainActivity extends AppCompatActivity {
  </table>
 
 ## License
-MIT
+https://github.com/TheRandomCrafter83/CustomDialogs/blob/master/LICENSE
