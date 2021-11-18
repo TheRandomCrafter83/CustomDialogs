@@ -15,7 +15,7 @@
             android:scaleType="fitCenter"
             android:layout_weight="1"/>
         <TextView
-            android:id="@+id/textview2"
+            android:id="@+id/tv_opacity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
@@ -32,7 +32,7 @@
             android:min="0"
             />
         <TextView
-            android:id="@+id/textview4"
+            android:id="@+id/tv_saturation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"
@@ -48,7 +48,7 @@
             android:min="0"
             android:max="100"/>
         <TextView
-            android:id="@+id/textview3"
+            android:id="@+id/tv_brightness"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="8dp"

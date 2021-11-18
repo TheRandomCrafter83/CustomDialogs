@@ -160,7 +160,7 @@ public class Utils {
         gd.setStroke(1, getContrast(color));
         gd.setColor(color);
         tv.setBackground(gd);
-        tv.setTextColor(getContrast(color));
+        tv.setTextColor(textColor);
     }
 
     public static void doCopy(Context context, @ColorInt int selectedColor){

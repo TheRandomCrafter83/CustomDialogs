@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="8dp">
     <TextView
-        android:id="@+id/textview2"
+        android:id="@+id/tv_red"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
@@ -23,7 +23,7 @@
         android:min="0"
         />
     <TextView
-        android:id="@+id/textview4"
+        android:id="@+id/tv_green"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
@@ -40,7 +40,7 @@
         android:min="0"
         android:max="255"/>
     <TextView
-        android:id="@+id/textview5"
+        android:id="@+id/tv_blue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"
@@ -57,7 +57,7 @@
         android:min="0"
         android:max="255"/>
     <TextView
-        android:id="@+id/textview3"
+        android:id="@+id/tv_alpha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="8dp"

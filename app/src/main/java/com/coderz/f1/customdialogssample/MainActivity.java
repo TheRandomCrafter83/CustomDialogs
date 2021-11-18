@@ -36,15 +36,15 @@ public class MainActivity extends AppCompatActivity {
 
                 }
             });
-            colorDialog.setTextColor(Color.WHITE);
-            colorDialog.setBackgroundColor(Color.DKGRAY);
-            colorDialog.setInitialColor(Color.RED);
-            colorDialog.setTitle("Choose A Color");
-
-
-
-
-            colorDialog.setMargins(8);
+//            colorDialog.setTextColor(Color.WHITE);
+//            colorDialog.setBackgroundColor(Color.DKGRAY);
+//            colorDialog.setInitialColor(Color.RED);
+//            colorDialog.setTitle("Choose A Color");
+//
+//
+//
+//
+//            colorDialog.setMargins(8);
             colorDialog.showDialog();
         });
     }

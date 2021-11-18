@@ -1,11 +1,13 @@
 package com.coderz.f1.customdialogs.colordialog;
 
 import android.annotation.SuppressLint;
+import android.app.Application;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -20,9 +22,12 @@ import android.widget.Toast;
 import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.content.res.ResourcesCompat;
 
 import com.coderz.f1.customdialogs.R;
 import com.coderz.f1.customdialogs.colordialog.utils.Utils;
+
+import org.w3c.dom.Text;
 
 public class ColorDialog {
 
@@ -47,6 +52,9 @@ public class ColorDialog {
     SeekBar sbBrightness = null;
     SeekBar sbSaturation = null;
     SeekBar sbOpacity = null;
+    TextView tvOpacity;
+    TextView tvSaturation;
+    TextView tvBrightness;
 
     //RGB layout
     SeekBar sbRed;
@@ -54,6 +62,10 @@ public class ColorDialog {
     SeekBar sbBlue;
     SeekBar sbAlpha;
     TextView tvPreview2;
+    TextView tvAlpha;
+    TextView tvRed;
+    TextView tvGreen;
+    TextView tvBlue;
 
     //tabs
     LinearLayout tab1;
@@ -67,11 +79,11 @@ public class ColorDialog {
 
     private String title = "";
     @ColorInt
-    private int initialColor = 0;
+    private int initialColor = Color.BLACK;
     @ColorInt
-    private int backgroundColor = 0;
+    private int backgroundColor;
     @ColorInt
-    private int textColor = 0;
+    private int textColor;
     @ColorInt
     private int selectedColor = 0;
 
@@ -79,7 +91,7 @@ public class ColorDialog {
 
     int selHue = 0;
 
-    private int margins; //Will need context to set actual margins
+    private int margins = 8; //Will need context to set actual margins
 
     public TabIndex getTabIndex() {
         return tabIndex;
@@ -129,7 +141,19 @@ public class ColorDialog {
     public ColorDialog(@NonNull Context context, DialogResponseListener listener){
         this.context = context;
         this.listener = listener;
-        margins = (int) (32 * Resources.getSystem().getDisplayMetrics().density);
+        //margins = (int) (32 * Resources.getSystem().getDisplayMetrics().density);
+        TypedValue a = new TypedValue();
+        context.getTheme().resolveAttribute(android.R.attr.windowBackground,a,true);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            if (a.isColorType()){
+            setBackgroundColor(a.data);
+            }
+        } else if(a.type >= TypedValue.TYPE_FIRST_COLOR_INT && a.type <= TypedValue.TYPE_LAST_COLOR_INT){
+            setBackgroundColor(a.data);
+        }
+        setTextColor(Utils.getContrast(getBackgroundColor()));
+        setTitle(context.getApplicationInfo().loadLabel(context.getPackageManager()).toString());
+        setMargins(8);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -172,6 +196,22 @@ public class ColorDialog {
         sbBlue = content.findViewById(R.id.sb_blue);
         sbAlpha = content.findViewById(R.id.sb_alpha);
         tvPreview2 = content.findViewById(R.id.tv_preview2);
+        tvAlpha = content.findViewById(R.id.tv_alpha);
+        tvRed = content.findViewById(R.id.tv_red);
+        tvGreen = content.findViewById(R.id.tv_green);
+        tvBlue = content.findViewById(R.id.tv_blue);
+        tvOpacity = content.findViewById(R.id.tv_opacity);
+        tvBrightness = content.findViewById(R.id.tv_brightness);
+        tvSaturation = content.findViewById(R.id.tv_saturation);
+
+        tvAlpha.setTextColor(getTextColor());
+        tvRed.setTextColor(getTextColor());
+        tvGreen.setTextColor(getTextColor());
+        tvBlue.setTextColor(getTextColor());
+        tvOpacity.setTextColor(getTextColor());
+        tvBrightness.setTextColor(getTextColor());
+        tvSaturation.setTextColor(getTextColor());
+
 
         tab1_text.setTextColor(getTextColor());
         tab2_text.setTextColor(getTextColor());
@@ -509,9 +549,15 @@ public class ColorDialog {
         sbBrightness.setProgressDrawable(Utils.getBrightnessDrawable(color2));
         sbSaturation.setProgressDrawable(Utils.getSaturationDrawable(context, color2));
         selColor.setText(Utils.colorToHTMLColor(color));
-        selColor.setTextColor(Utils.getContrast(color));
-        Utils.makeViewRounded(selColor, color,Utils.getContrast(color));
-        Utils.setCompoundDrawableColor(selColor,Utils.getContrast(color));
+        if (sbOpacity.getProgress()>sbOpacity.getMax()/2) {
+            selColor.setTextColor(Utils.getContrast(color));
+            Utils.makeViewRounded(selColor, color, Utils.getContrast(color));
+            Utils.setCompoundDrawableColor(selColor, Utils.getContrast(color));
+        }else{
+            selColor.setTextColor(Utils.getContrast(getBackgroundColor()));
+            Utils.makeViewRounded(selColor, color, Utils.getContrast(getBackgroundColor()));
+            Utils.setCompoundDrawableColor(selColor, Utils.getContrast(getBackgroundColor()));
+        }
         selectedColor = color;
     }
 
@@ -519,9 +565,15 @@ public class ColorDialog {
         @ColorInt int color2 = Color.argb(255,Color.red(color),Color.green(color),Color.blue(color));
         sbAlpha.setProgressDrawable(Utils.getOpacityDrawable(context,color2));
         tvPreview2.setText(Utils.colorToHTMLColor(color));
-        tvPreview2.setTextColor(Utils.getContrast(color));
-        Utils.makeViewRounded(tvPreview2,color,Utils.getContrast((color)));
-        Utils.setCompoundDrawableColor(tvPreview2,Utils.getContrast(color));
+        if(sbAlpha.getProgress()>sbAlpha.getMax()/2) {
+            tvPreview2.setTextColor(Utils.getContrast(color));
+            Utils.makeViewRounded(tvPreview2, color, Utils.getContrast((color)));
+            Utils.setCompoundDrawableColor(tvPreview2, Utils.getContrast(color));
+        } else {
+            tvPreview2.setTextColor(Utils.getContrast(getBackgroundColor()));
+            Utils.makeViewRounded(tvPreview2, color, Utils.getContrast((getBackgroundColor())));
+            Utils.setCompoundDrawableColor(tvPreview2, Utils.getContrast(getBackgroundColor()));
+        }
         selectedColor = color;
     }
 
