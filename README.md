@@ -3,7 +3,7 @@
 
 [![Build Status](readme_images/build.svg)](https://github.com/TheRandomCrafter83/CustomDialogs) 
 
-(Minimum API supported is SDK 28)
+![minversion](readme_images/min_sdk.svg) 
 
 Custom Dialogs is an Android Library containing several useful custom dialogs.
 - Currently there is only one dialog type, the ColorDialog.
