@@ -35,6 +35,7 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
+<-------ONLY ADD WHAT IS ABOVE IF NOT ALREADY PRESENT----->
 rootProject.name = "My Application"
 include ':app'
 ```
