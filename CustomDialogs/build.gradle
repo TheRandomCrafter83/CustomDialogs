@@ -4,11 +4,24 @@ plugins {
     id 'signing'
 }
 
+def versionPropsFile = file('../version.properties')
+def versionBuild
+def versionMajor
+def versionMinor
 
+if (versionPropsFile.canRead()) {
+    def Properties versionProps = new Properties()
+    versionProps.load(new FileInputStream(versionPropsFile))
+    versionMajor = versionProps['VERSION_BUILD_MAJOR'].toString()
+    versionMinor = versionProps['VERSION_BUILD_MINOR'].toString()
+    versionBuild = versionMajor + "." + versionMinor
+} else {
+    throw new FileNotFoundException("Could not read version.properties!")
+}
 
 ext {
     PUBLISH_GROUP_ID = 'io.github.therandomcrafter83'
-    PUBLISH_VERSION = '1.3'
+    PUBLISH_VERSION = versionBuild
     PUBLISH_ARTIFACT_ID = 'custom-dialogs'
 }
 

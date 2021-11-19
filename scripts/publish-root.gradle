@@ -24,6 +24,20 @@ if (secretPropsFile.exists()) {
     ext["snapshot"] = System.getenv('SNAPSHOT')
 }
 
+def versionPropsFile = file('version.properties')
+def versionBuild
+def versionMajor
+def versionMinor
+
+if (versionPropsFile.canRead()) {
+    def Properties versionProps = new Properties()
+    versionProps.load(new FileInputStream(versionPropsFile))
+    versionMajor = versionProps['VERSION_BUILD_MAJOR'].toString()
+    versionMinor = versionProps['VERSION_BUILD_MINOR'].toString()
+    versionBuild = versionMajor + "." + versionMinor
+} else {
+    throw new FileNotFoundException("Could not read version.properties!")
+}
 
 // Set up Sonatype repository
 nexusPublishing {
@@ -33,7 +47,7 @@ nexusPublishing {
             stagingProfileId = sonatypeStagingProfileId
             username = ossrhUsername
             password = ossrhPassword
-            version = 1.3
+            version = versionBuild
             nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
             snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
         }
