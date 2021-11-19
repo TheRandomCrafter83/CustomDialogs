@@ -19,6 +19,9 @@
       </map>
     </option>
   </component>
+  <component name="ProjectResources">
+    <resource url="http://maven.apache.org/POM/4.0.0" location="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
