@@ -23,27 +23,12 @@ Custom Dialogs is an open source project which can be found [Here](https://githu
 on GitHub.
 
 ## Installation
-**settings.gradle** - your settings.gradle file should look similar to the following.
-
-```gradle
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-        jcenter() // Warning: this repository is going to shut down soon
-        maven { url 'https://jitpack.io' }
-    }
-}
-<-------ONLY ADD WHAT IS ABOVE IF NOT ALREADY PRESENT----->
-rootProject.name = "My Application"
-include ':app'
-```
+**IMPORTANT** This library requires the repository mavenCentral().
 
 **build.gradle(App Module)** - then you can add the following in your module level's dependencies section. Replace '[build]' with build version located above.
 
 ```gradle
-implementation 'com.github.TheRandomCrafter83:CustomDialogs:[build]' //<--add this implementation to the dependencies section
+implementation 'io.github.therandomcrafter83:custom-dialogs:[build]' //<--add this implementation to the dependencies section
 ```
 
 ## Example Usage
