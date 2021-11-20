@@ -5,6 +5,6 @@ echo =  written by Carl Williams [TheRandomCrafter83]                           
 echo ===============================================================================================
 echo =    Beginning Publish to MavenCentral                                                        =
 updateversion.exe %1
-rem gradlew CustomDialogs:publishReleasePublicationToSonatypeRepository
+gradlew CustomDialogs:publishReleasePublicationToSonatypeRepository
 echo =    Done                                                                                     =
 echo ===============================================================================================
