@@ -15,6 +15,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.graphics.drawable.LayerDrawable;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
+import android.os.Build;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -142,7 +143,14 @@ public class Utils {
         int[][] states = new int[][] {new int[] {android.R.attr.state_enabled}};
         int[] colors = new int[] {color};
         ColorStateList list = new ColorStateList(states,colors);
-        view.setCompoundDrawableTintList(list);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            view.setCompoundDrawableTintList(list);
+        } else {
+            Drawable[] d = view.getCompoundDrawables();
+            for (Drawable drawable : d){
+                drawable.setTintList(list);
+            }
+        }
     }
 
     public static Drawable getDialogBackgroundDrawable(@ColorInt int backgroundColor){

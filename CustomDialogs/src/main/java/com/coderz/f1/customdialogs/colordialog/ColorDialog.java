@@ -24,17 +24,34 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.res.ResourcesCompat;
 
+import com.coderz.f1.customdialogs.BaseDialog;
 import com.coderz.f1.customdialogs.R;
 import com.coderz.f1.customdialogs.colordialog.utils.Utils;
 
 import org.w3c.dom.Text;
 
-public class ColorDialog {
+public class ColorDialog extends BaseDialog implements BaseDialog.DialogResponseListener {
 
 
-    public interface DialogResponseListener{
-        void onOkClicked(@ColorInt int color);
+
+    public interface DialogResponseListener {
+        void onOkClicked(ReturnResult result);
         void onCancelClicked();
+    }
+    public class ReturnResult{
+        private int selectedColor;
+
+        public int getSelectedColor() {
+            return selectedColor;
+        }
+
+        public void setSelectedColor(int selectedColor) {
+            this.selectedColor = selectedColor;
+        }
+
+        public ReturnResult(int selectedColor) {
+            this.selectedColor = selectedColor;
+        }
     }
 
     public enum TabIndex{
@@ -43,10 +60,8 @@ public class ColorDialog {
     }
 
     Context context;
-    DialogResponseListener listener;
+    ColorDialog.DialogResponseListener listener;
 
-    LinearLayout mainLayout = null;
-    TextView txtTitle = null;
     View content = null;
     TextView selColor = null;
     SeekBar sbBrightness = null;
@@ -77,21 +92,14 @@ public class ColorDialog {
     ViewGroup tabContent1;
     ViewGroup tabContent2;
 
-    private String title = "";
     @ColorInt
     private int initialColor = Color.BLACK;
-    @ColorInt
-    private int backgroundColor;
-    @ColorInt
-    private int textColor;
     @ColorInt
     private int selectedColor = 0;
 
     private TabIndex tabIndex = TabIndex.PALETTE;
 
     int selHue = 0;
-
-    private int margins = 8; //Will need context to set actual margins
 
     public TabIndex getTabIndex() {
         return tabIndex;
@@ -101,16 +109,9 @@ public class ColorDialog {
         this.tabIndex = tabIndex;
     }
 
-    public void setMargins(int margins){this.margins = margins;}
-
-    public int getMargins(){return this.margins;}
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
+    @Override
+    protected View getContent(ViewGroup parent) {
+        return createLayout(parent);
     }
 
     public int getInitialColor() {
@@ -122,70 +123,23 @@ public class ColorDialog {
         this.selectedColor = initialColor;
     }
 
-    public int getBackgroundColor() {
-        return backgroundColor;
-    }
-
-    public void setBackgroundColor(int backgroundColor) {
-        this.backgroundColor = backgroundColor;
-    }
-
-    public int getTextColor() {
-        return textColor;
-    }
-
-    public void setTextColor(int textColor) {
-        this.textColor = textColor;
-    }
-
-    public ColorDialog(@NonNull Context context, DialogResponseListener listener){
+    public ColorDialog(@NonNull Context context, ColorDialog.DialogResponseListener listener){
+        super(context);
+        baseListener = this;
         this.context = context;
         this.listener = listener;
-        //margins = (int) (32 * Resources.getSystem().getDisplayMetrics().density);
         setInitialColor(Color.BLACK);
-        TypedValue a = new TypedValue();
-        context.getTheme().resolveAttribute(android.R.attr.windowBackground,a,true);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            if (a.isColorType()){
-            setBackgroundColor(a.data);
-            }
-        } else if(a.type >= TypedValue.TYPE_FIRST_COLOR_INT && a.type <= TypedValue.TYPE_LAST_COLOR_INT){
-            setBackgroundColor(a.data);
-        }
-        setTextColor(Utils.getContrast(getBackgroundColor()));
-        setTitle(context.getApplicationInfo().loadLabel(context.getPackageManager()).toString());
-        setMargins(8);
     }
 
     @SuppressLint("ClickableViewAccessibility")
-    private View createLayout(){
+    private View createLayout(ViewGroup parent){
         Resources r = context.getResources();
         int margin =(int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,getMargins(),r.getDisplayMetrics());
-
-        mainLayout = new LinearLayout(context);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.setMargins(margin,margin,margin,margin);
-        mainLayout.setLayoutParams(params);
-        mainLayout.setOrientation(LinearLayout.VERTICAL);
-        mainLayout.setBackgroundColor(getBackgroundColor());
-
-        txtTitle = new TextView(context);
-        LinearLayout.LayoutParams tlp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        tlp.setMargins(margin,margin,margin,margin);
-        txtTitle.setLayoutParams(tlp);
-        txtTitle.setText(getTitle());
-        txtTitle.setTextColor(getTextColor());
-        txtTitle.setTypeface(txtTitle.getTypeface(),android.graphics.Typeface.BOLD);
-        txtTitle.setTextSize(20f);
-
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        content = inflater.inflate(R.layout.colordialog_color_picker, mainLayout, false);
+        content = inflater.inflate(R.layout.colordialog_color_picker,parent, false);
         LinearLayout.LayoutParams lParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
         lParams.setMargins(margin,margin,margin,margin);
         content.setLayoutParams(lParams);
-        mainLayout.addView(txtTitle);
-        mainLayout.addView(content);
-
         tab1 = content.findViewById(R.id.tab1);
         tab2 = content.findViewById(R.id.tab2);
         tab1_text = content.findViewById(R.id.tab_text1);
@@ -204,7 +158,6 @@ public class ColorDialog {
         tvOpacity = content.findViewById(R.id.tv_opacity);
         tvBrightness = content.findViewById(R.id.tv_brightness);
         tvSaturation = content.findViewById(R.id.tv_saturation);
-
         tvAlpha.setTextColor(getTextColor());
         tvRed.setTextColor(getTextColor());
         tvGreen.setTextColor(getTextColor());
@@ -212,14 +165,10 @@ public class ColorDialog {
         tvOpacity.setTextColor(getTextColor());
         tvBrightness.setTextColor(getTextColor());
         tvSaturation.setTextColor(getTextColor());
-
-
         tab1_text.setTextColor(getTextColor());
         tab2_text.setTextColor(getTextColor());
-
         tabContent1 = content.findViewById(R.id.palette_layout);
         tabContent2 = content.findViewById(R.id.rgb_layout);
-
         tab1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -234,8 +183,6 @@ public class ColorDialog {
                 setSelectedTab();
             }
         });
-
-
         ImageView colorPalette = content.findViewById(R.id.iv_color_palette);
         colorPalette.setClipToOutline(true);
         colorPalette.setClickable(true);
@@ -267,6 +214,7 @@ public class ColorDialog {
                 }
                 //Show the color value
                 color = bmp.getPixel(x, y);
+
                 int hue;
                 float[] hsv = new float[3];
                 Color.colorToHSV(color,hsv);
@@ -279,7 +227,6 @@ public class ColorDialog {
             }
             return false;
         });
-
         selColor = content.findViewById(R.id.tv_preview);
         Utils.setCompoundDrawable(context,selColor,0,R.drawable.colordialog_copy);
         Utils.setCompoundDrawable(context,selColor,2,R.drawable.colordialog_paste);
@@ -300,7 +247,6 @@ public class ColorDialog {
             }
             return false;
         });
-
         Utils.setCompoundDrawable(context,tvPreview2,0,R.drawable.colordialog_copy);
         Utils.setCompoundDrawable(context,tvPreview2,2,R.drawable.colordialog_paste);
         tvPreview2.setClickable(true);
@@ -320,8 +266,6 @@ public class ColorDialog {
             }
             return false;
         });
-
-
         sbOpacity = content.findViewById(R.id.sb_opacity);
         sbOpacity.setProgress(Color.alpha(getInitialColor()));
         sbOpacity.setSplitTrack(false);
@@ -337,7 +281,6 @@ public class ColorDialog {
                 setPreview(selHue);
             }
         });
-
         sbBrightness = content.findViewById(R.id.sb_brightness);
         float[]hsv = new float[3];
         Color.colorToHSV(getInitialColor(),hsv);
@@ -357,7 +300,6 @@ public class ColorDialog {
                 setPreview(selHue);
             }
         });
-
         sbSaturation = content.findViewById(R.id.sb_saturation);
         int saturation =(int) (hsv[1] * 100) ;
         sbSaturation.setProgress(saturation);
@@ -378,7 +320,6 @@ public class ColorDialog {
         sbRed.setSplitTrack(false);
         sbGreen.setSplitTrack(false);
         sbBlue.setSplitTrack(false);
-
         sbRed.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -390,18 +331,13 @@ public class ColorDialog {
                 @ColorInt int color = Color.argb(a,r,g,b);
                 setPreview2(color);
             }
-
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {
-
             }
-
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {
-
             }
         });
-
         sbGreen.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -424,7 +360,6 @@ public class ColorDialog {
 
             }
         });
-
         sbBlue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -447,7 +382,6 @@ public class ColorDialog {
 
             }
         });
-
         sbAlpha.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -471,7 +405,7 @@ public class ColorDialog {
             }
         });
         setSelectedTab();
-        return mainLayout;
+        return content;
     }
 
     void setSelectedTab(){
@@ -502,7 +436,6 @@ public class ColorDialog {
                 tab1_text.setTypeface(tab1_text.getTypeface(), Typeface.NORMAL);
                 tabContent2.setVisibility(View.VISIBLE);
                 tabContent1.setVisibility(View.GONE);
-                //setPreview2(tmpColor);
         }
     }
 
@@ -578,18 +511,13 @@ public class ColorDialog {
         selectedColor = color;
     }
 
-    public void showDialog(){
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setCustomTitle(txtTitle);
-        builder.setView(createLayout());
-        builder.setPositiveButton("Ok", (_dialog, _which) -> listener.onOkClicked(selectedColor));
+    @Override
+    public void onOkClicked() {
+        listener.onOkClicked(new ReturnResult(selectedColor));
+    }
 
-        builder.setNegativeButton("Cancel", (_dialog, _which) -> listener.onCancelClicked());
-        AlertDialog dlg = builder.create();
-        dlg.show();
-        dlg.getWindow().getDecorView().getBackground().setColorFilter(new android.graphics.LightingColorFilter(0xff000000,getBackgroundColor()));
-        dlg.getWindow().getDecorView().setBackground(Utils.getDialogBackgroundDrawable(getBackgroundColor()));
-        dlg.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getTextColor());
-        dlg.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getTextColor());
+    @Override
+    public void onCancelClicked() {
+        listener.onCancelClicked();
     }
 }

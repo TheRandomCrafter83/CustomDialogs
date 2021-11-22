@@ -1,13 +1,15 @@
 # Custom Dialogs
-## _Custom dialogs at your fingertips_
+<p align=center> <b><i>Custom dialogs at your fingertips</i></b> </p>
 
 [![Build Status](readme_images/build.svg)](https://github.com/TheRandomCrafter83/CustomDialogs) 
 
 ![minversion](readme_images/min_sdk.svg) 
 
 Custom Dialogs is an Android Library containing several useful custom dialogs.
-- Currently there is only one dialog type, the ColorDialog.
-- More to come later.
+- Added a BaseDialog for all other Dialogs to inherit from for cleaner code.
+- Library contains the following custom dialogs:
+    - ColorDialog: used to allow the user to choose a color. The selected color will be returned via the listener. (See Screenshots below)
+
 
 ## Features
 
@@ -15,7 +17,7 @@ Custom Dialogs is an Android Library containing several useful custom dialogs.
 - Title
 - Text color
 - Margins
-- (To be added) An icon for the dialog
+- An icon for the dialog
 
 ## Tech
 
