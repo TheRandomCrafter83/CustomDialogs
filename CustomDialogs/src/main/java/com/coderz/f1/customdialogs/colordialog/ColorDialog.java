@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
@@ -38,7 +39,7 @@ public class ColorDialog extends BaseDialog implements BaseDialog.DialogResponse
         void onOkClicked(ReturnResult result);
         void onCancelClicked();
     }
-    public class ReturnResult{
+    public static class ReturnResult{
         private int selectedColor;
 
         public int getSelectedColor() {
@@ -131,6 +132,7 @@ public class ColorDialog extends BaseDialog implements BaseDialog.DialogResponse
         setInitialColor(Color.BLACK);
     }
 
+//    @SuppressLint("ClickableViewAccessibility")
     @SuppressLint("ClickableViewAccessibility")
     private View createLayout(ViewGroup parent){
         Resources r = context.getResources();
@@ -187,9 +189,6 @@ public class ColorDialog extends BaseDialog implements BaseDialog.DialogResponse
         colorPalette.setClipToOutline(true);
         colorPalette.setClickable(true);
         colorPalette.setOnTouchListener((v, event) -> {
-            if (event.getAction() == MotionEvent.ACTION_UP){
-                v.performClick();
-            }
             if(event.getAction() == MotionEvent.ACTION_DOWN || event.getAction() == MotionEvent.ACTION_MOVE){
                 ImageView imageView = (ImageView)v;
                 imageView.setImageResource(R.drawable.colordialog_huepalette);

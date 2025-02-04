@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mi_color_dialog"
+        android:title="@string/color_dialog_demo"
+        android:icon="@drawable/ic_color"
+        />
+    <item
+        android:id="@+id/mi_date_dialog"
+        android:title="@string/date_dialog_demo"
+        android:icon="@drawable/ic_date"
+        />
+    <item
+        android:id="@+id/mi_time_dialog"
+        android:title="@string/time_dialog_demo"
+        android:icon="@drawable/ic_time"
+        />
+
+</menu>

@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
+    <!--colors for light mode-->
+    <color name="lightmode_primary">#2D4357</color>
+    <color name="lightmode_surface">#56687C</color>
+    <color name="lightmode_variant">#2D4357</color>
+    <color name="lightmode_primary_text">#ffffff</color>
+    <color name="lightmode_window_background">#C1C6D6</color>
+    <color name="lightmode_surface_text">#C1C6D6</color>
+
+    <color name="lightmode_tab_indicator">#C8380C</color>
+
+    <!--colors for dark mode    -->
+    <color name="darkmode_primary">#8BA3B6</color>
+    <color name="darkmode_surface">#303E4A</color>
+    <color name="darkmode_variant">#202A3A</color>
+    <color name="darkmode_primary_text">#ffffff</color>
+    <color name="darkmode_window_background">#17181B</color>
+    <color name="trans_black">#97000000</color>
+    <color name="transparent">#00000000</color>
+
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
 </resources>

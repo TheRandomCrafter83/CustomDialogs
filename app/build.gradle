@@ -8,13 +8,13 @@ android {
     defaultConfig {
         applicationId "com.coderz.f1.customdialogssample"
         minSdk 21
-        targetSdk 31
+        targetSdk 34
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 34
     }
 
     buildTypes {
@@ -27,6 +27,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
+    namespace 'com.coderz.f1.customdialogssample'
 }
 
 dependencies {
@@ -35,5 +36,9 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation project(path: ':CustomDialogs')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.5'
+    implementation 'androidx.navigation:navigation-ui:2.3.5'
+
 
 }

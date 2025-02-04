@@ -10,4 +10,12 @@
     <string name="green">Green</string>
     <string name="blue">Blue</string>
     <string name="alpha">Alpha</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
+    <string name="month_names">January,February,March,April,May,June,July,August,September,October,November,December</string>
+    <string name="month_abbreviations">Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec</string>
+    <string name="month_numbers">1,2,3,4,5,6,7,8,9,10,11,12</string>
+    <string name="title_placeholder">TitlePlaceholder</string>
+    <string name="temporary_message">MessagePlaceHolder</string>
+    <string name="enter_your_input">Enter your input</string>
 </resources>

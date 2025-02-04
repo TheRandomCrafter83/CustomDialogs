@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_rectangle">
+
+
+    <com.coderz.f1.customdialogs.datetimedialogs.custom_views.NumberPicker
+        android:id="@+id/hour"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:showDividers="none"
+        android:layout_marginStart="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/minute"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.coderz.f1.customdialogs.datetimedialogs.custom_views.NumberPicker
+        android:id="@+id/minute"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:showDividers="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/am_pm"
+        app:layout_constraintStart_toEndOf="@id/hour"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <com.coderz.f1.customdialogs.datetimedialogs.custom_views.NumberPicker
+        android:id="@+id/am_pm"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:showDividers="none"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/minute"
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

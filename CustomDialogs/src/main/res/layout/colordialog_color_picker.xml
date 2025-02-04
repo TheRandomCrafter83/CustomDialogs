@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:weightSum="1">
 
     <LinearLayout
         android:id="@+id/linear2"
@@ -70,10 +71,41 @@
 
     </LinearLayout>
 
-    <include android:id="@+id/palette_layout"
-        layout="@layout/colordialog_color_palette"/>
+    <include
+        android:id="@+id/palette_layout"
+        layout="@layout/colordialog_color_palette" />
 
     <include android:id="@+id/rgb_layout"
         layout="@layout/colordialog_rgb"
         android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/button_panel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:text="@string/cancel"
+            android:elevation="0dp"
+            android:background="@drawable/dialog_button"
+            />
+
+        <Button
+            android:id="@+id/ok_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:text="@string/ok"
+            android:elevation="0dp"
+            android:background="@drawable/dialog_button"
+            />
+    </LinearLayout>
 </LinearLayout>

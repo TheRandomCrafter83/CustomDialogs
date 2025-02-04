@@ -1,0 +1,306 @@
+commit 38b232fe8385648b0930220ccce3ddeeacdb3731
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Sun Nov 21 20:06:34 2021 -0500
+
+    by TheRandomCrafter83
+    Added BaseDialog
+    Re-Wrote ColorDialog to inherit BaseDialog
+    Made a Start on DatePickerDialog
+
+commit 4ca9078477ff710da3d9987294f1ede78c9466b4
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Sat Nov 20 04:17:14 2021 -0500
+
+    Released new minor version via maven
+
+commit 97ef7c94a990747faa9f060b15285b3dde73a213
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Sat Nov 20 04:16:35 2021 -0500
+
+    Released new minor version via maven
+
+commit a30e3da11301421ab0aa174ece2d9cb6234f166e
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Fri Nov 19 19:38:09 2021 -0500
+
+    Updated the Auto-Increaser
+
+commit a89b7c381d19e64995ff14648a60e1dd88f8bc3a
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Fri Nov 19 17:35:12 2021 -0500
+
+    Edited version updater to update the build image as well
+
+commit fd5de6b1ed575d475c4a51a59de96281fd326057
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Fri Nov 19 17:15:47 2021 -0500
+
+    Added a batch file for auto increasing the version numbers.
+
+commit 29655bc66319fd5f9ac44b772119ff47c0e7c3f4
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Fri Nov 19 17:15:39 2021 -0500
+
+    Added a batch file for auto increasing the version numbers.
+
+commit e7cfaeb84e91a548b01d525c8e4bd4147e0d6768
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Fri Nov 19 15:11:09 2021 -0500
+
+    Updated README.md
+
+commit fd9c9ebf76bc234c4431f06553573c382d40e316
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Fri Nov 19 14:21:47 2021 -0500
+
+    added a key file
+
+commit 1a765babcd3d8ff0fc51b518f53bdc01cf7d900a
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Fri Nov 19 14:13:36 2021 -0500
+
+    added a key file
+
+commit 2b2213d1070a86bb4eec7cdcb568ded129b40f4e
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Fri Nov 19 12:14:19 2021 -0500
+
+    added a key file
+
+commit 993c099047e9894be463d8e7d6b61e077ede8a1d
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Thu Nov 18 23:51:28 2021 -0500
+
+    Updated README.md
+
+commit ddebb89ace26cf7dcf91a13383199c475948239d
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Thu Nov 18 23:48:05 2021 -0500
+
+    Updated build.svg and README.md
+
+commit 52e3d3edadaf049e0346ef9f0102e2375e8f115c
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Thu Nov 18 23:44:13 2021 -0500
+
+    Updated License section of README.md
+
+commit fdf876e7e978ac3292d9b4e743ae46593d32abc2
+Author: TheRandomCrafter83 <42680657+TheRandomCrafter83@users.noreply.github.com>
+Date:   Thu Nov 18 16:54:39 2021 -0500
+
+    Update README.md
+
+commit 0b1badd9b47a515dc242198beae355f5c3068347
+Author: TheRandomCrafter83 <42680657+TheRandomCrafter83@users.noreply.github.com>
+Date:   Thu Nov 18 16:53:32 2021 -0500
+
+    Create LICENSE
+
+commit c16b0820fd786e360b62e81bdb9e9e8669f43040
+Author: TheRandomCrafter83 <42680657+TheRandomCrafter83@users.noreply.github.com>
+Date:   Thu Nov 18 13:34:00 2021 -0500
+
+    Update README.md
+
+commit 97baf3f9b861cbc07126a581c4739a028677238d
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Wed Nov 17 20:56:36 2021 -0500
+
+    Fixed Initial Color if not set from code
+
+commit c11b8f6340d66f79aa8e58cf7595a0201b313544
+Merge: dbe43c8 64d5b7f
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Wed Nov 17 20:51:14 2021 -0500
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       readme_images/build.svg
+
+commit dbe43c85e00dd33309b2a60edb060ca8355c5ffe
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Wed Nov 17 20:51:04 2021 -0500
+
+    Added default values for the color dialog
+
+commit 64d5b7f322bf55a51a973d446c0f3474647ebadc
+Author: TheRandomCrafter83 <42680657+TheRandomCrafter83@users.noreply.github.com>
+Date:   Wed Nov 17 20:48:55 2021 -0500
+
+    Update build.svg
+
+commit 421894815632ad93360582a27fe6414f03916a53
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Wed Nov 17 20:46:45 2021 -0500
+
+    Added default values for the color dialog
+
+commit b3b3329111027774b141e11e7c24dc5f07a205f1
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Wed Nov 17 19:55:00 2021 -0500
+
+    Put Version Number inside a separate file for easier version number updating
+
+commit 395ee8aaebbea8e81e3b0fc928258d7c64ea3ade
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Wed Nov 17 19:41:43 2021 -0500
+
+    Put Version Number inside a separate file for easier version number updating
+
+commit e3acbc5c040ddf22fd73b58db4f919a85ce68357
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Wed Nov 17 19:23:16 2021 -0500
+
+    Updated Readme
+
+commit f40f8198cb0d99705cbb99110a481d12d4a08b77
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Wed Nov 17 19:03:16 2021 -0500
+
+    Updated Readme
+
+commit ce9b63ed938ba9c0a140034f95c3a0ddc7d6b661
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Wed Nov 17 19:02:32 2021 -0500
+
+    Updated Readme
+
+commit 4398886106614d14cf495dc2b0ce7889728df0da
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Wed Nov 17 18:48:11 2021 -0500
+
+    forgot to change something in build.gradle
+
+commit b04267a37cfc7f6b658afc7c267807775fc531a7
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Wed Nov 17 18:45:04 2021 -0500
+
+    Updated Readme.md
+
+commit 248e9889753a95a920fd689b26e31a65bdfc741e
+Merge: 0d6d646 32dda9a
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Wed Nov 17 18:43:34 2021 -0500
+
+    Merge remote-tracking branch 'origin/master'
+    
+    # Conflicts:
+    #       README.md
+
+commit 0d6d646fd0922181bf15a39e763eee7b027050ca
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Wed Nov 17 18:43:13 2021 -0500
+
+    Updated Readme.md
+    Lowered MinSDK to SDK 23
+
+commit 32dda9ac11fa60f1f551991d1029f18deb6aa386
+Author: TheRandomCrafter83 <42680657+TheRandomCrafter83@users.noreply.github.com>
+Date:   Wed Nov 17 09:24:04 2021 -0500
+
+    Update README.md
+
+commit 32980acd5b22c352253fd3b5f746420c503745fe
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:58:58 2021 -0500
+
+    updated Readme.md
+
+commit 04646df2e04582039498cfcd5ef9e6771326ef9c
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:58:26 2021 -0500
+
+    updated Readme.md
+
+commit ff0f6451a1c42dc38aa9b0ab2b002e9f39cc1654
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:58:02 2021 -0500
+
+    updated Readme.md
+
+commit 58f1873420ac815716ea0834c9d1c93e93c933fd
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:57:20 2021 -0500
+
+    updated Readme.md
+
+commit 31df556c4e4a895a71b4490f572dec1d230b3f5c
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:56:28 2021 -0500
+
+    updated Readme.md
+
+commit b359981f66f0795af0387d1a061a8dd402f8f619
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:55:04 2021 -0500
+
+    updated Readme.md
+
+commit 496a282544b5de8ba2b02e2b2b12aecf483ffee5
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:53:04 2021 -0500
+
+    updated Readme.md
+
+commit a55c2de73dff4debfa2d70a716609774ec83e328
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:51:51 2021 -0500
+
+    updated Readme.md
+
+commit 3c7a6356a76a2952e968657787728aa79e064bab
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:50:42 2021 -0500
+
+    updated Readme.md
+
+commit 7d2b3cc29799404190384b5f3553bb8392e6e96e
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:49:42 2021 -0500
+
+    updated Readme.md
+
+commit af9a75f57ff8f27706158a2e0289c02bb785f606
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:46:26 2021 -0500
+
+    updated Readme.md
+
+commit 4b570337e488f5f6339297a1a4ae0026003c56f1
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:44:16 2021 -0500
+
+    updated Readme.md
+
+commit 2d77c64be6338a12d388403628feb2b41e6d2e8c
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:23:52 2021 -0500
+
+    changed build.svg
+
+commit f70e40ceddcf44d1bbd38d904edf1ba9244c5545
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 18:23:06 2021 -0500
+
+    Added build.svg to root directory.
+    Updated Readme.md
+
+commit 3dbdf25fe7d29813bda7a5e07b0efe7b5d03fa96
+Author: TheRandomCrafter83 <42680657+TheRandomCrafter83@users.noreply.github.com>
+Date:   Tue Nov 16 18:16:04 2021 -0500
+
+    Create README.md
+
+commit 89dee46e7620efd15e07721c0a23207a1806bf20
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 17:28:11 2021 -0500
+
+    a change
+
+commit dbab9e1066e1b93a4125550207a4c8e39b842972
+Author: TheRandomCrafter83 <williams.carl.83@gmail.com>
+Date:   Tue Nov 16 17:27:32 2021 -0500
+
+    Initial commit

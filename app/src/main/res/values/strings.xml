@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Custom Dialogs Sample</string>
+    <string name="show_color_dialog">Show Color Dialog</string>
+    <string name="color_dialog_demonstration">Color Dialog Demonstration</string>
+    <string name="date_dialog_demonstration">Date Dialog Demonstration</string>
+    <string name="show_date_dialog">Show Date Dialog</string>
+    <string name="show_time_dialog">Show Time Dialog</string>
+    <string name="time_dialog_demonstration">Time Dialog Demonstration</string>
+    <string name="color_canceled">User canceled the dialog.</string>
+    <string name="date_cancel">User canceled date selection.</string>
+    <string name="time_cancel">User canceled the selection.</string>
+    <string name="color_dialog_result_here">Color Dialog Result Here</string>
+    <string name="date_dialog_result_here">Date Dialog Result Here</string>
+    <string name="time_dialog_result_here">Time Dialog Result Here</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="temporary_text">Temporary Text</string>
+    <string name="color_dialog_demo">Color Dialog Demo</string>
+    <string name="date_dialog_demo">Date Dialog Demo</string>
+    <string name="time_dialog_demo">Time Dialog Demo</string>
+
 </resources>
