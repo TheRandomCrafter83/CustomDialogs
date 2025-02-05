@@ -1,4 +1,0 @@
-pub   rsa4096 2021-11-19 [SC]
-      C322547AFF7FEDEF09822AF452AA0F1C7CAF8E74
-uid                      Carl Williams <williams.carl.83@gmail.com>
-sub   rsa4096 2021-11-19 [E]
